@@ -3,13 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
 
-package com.mycompany.eeat.ui.testing;
+package com.mycompany.uitesting;
 
 /**
  *
  * @author Evan Riker
  */
-public class EeatUiTesting {
+public class UITesting {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
