@@ -11,16 +11,16 @@ import javax.swing.JFrame;
 
 public class myFrame extends JFrame implements ActionListener{
 
-JButton button
+JButton button;
 
     myFrame(){
         this.setDefalultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new FlowLayout());
 
-        button = new JButton("Select File")
-        button.addActionListener(l)
+        button = new JButton("Select File");
+        button.addActionListener(l);
 
-        this.add(button)
+        this.add(button);
         this.pack();
         this.sebBisible(true);
     }
