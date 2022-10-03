@@ -1,5 +1,5 @@
 
-package com.mycompany.uitesting
+
 
 public class Main{
 
