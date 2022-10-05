@@ -52,9 +52,6 @@ public class myFrame implements ActionListener{
         welcomeLabel = new JLabel ("Welcome to PDF selector");
         button = new JButton ("Go");
 
-        //add components
-        this.topFrame.add (welcomeLabel);
-        this.topFrame.add (button);
 
         //set component bounds (only needed by Absolute Positioning)
         welcomeLabel.setBounds (125, 70, 150, 25);
@@ -63,6 +60,7 @@ public class myFrame implements ActionListener{
         // object to JFrame
         this.topFrame.add(welcomeLabel);
         this.topFrame.add(button);
+        button.addActionListener(this);
         
 
         // make the main frame visible.
@@ -74,12 +72,15 @@ public class myFrame implements ActionListener{
 
         if(e.getSource() == button){
 
-            myFrame.this.topFrame.setVisible(false); // hide the original frame when working in file chooser
+            // hide the original frame when working in file chooser
+            myFrame.this.topFrame.setVisible(false); 
 
-            JFileChooser fileChooser = new JFileChooser(); //create a new file chooser window
+            //create a new file chooser window
+            JFileChooser fileChooser = new JFileChooser(); 
 
+            //spesify that only pdfs can be selected
             FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                ".pdfs", "pdf"); //spesify that only pdfs can be selected
+                ".pdfs", "pdf"); 
             fileChooser.setFileFilter(filter);
 
             //get the butten pressed to close the file chooser
