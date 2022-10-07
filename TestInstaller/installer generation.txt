@@ -1,0 +1,2 @@
+1) use launch4j to generate the java .exe
+2) use 7-zip to create a installer .exe

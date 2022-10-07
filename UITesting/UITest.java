@@ -1,6 +1,7 @@
-package UITesting;
+
 
 import javax.swing.SwingUtilities;
+import java.util.logging.Level;
 
 public class UITest {
 
@@ -11,7 +12,18 @@ public class UITest {
             
             @Override
             public void run() {
-                myFrame frame1 = new myFrame(); 
+
+                try {
+                    Log myLog = new Log("log.txt");
+
+                    myLog.logger.setLevel(Level.WARNING);
+
+                    myLog.logger.info("test1");
+
+                    myFrame frame1 = new myFrame();
+                } catch(Exception e) {
+                    System.out.println("error: " + e);
+                }
             }
 
         });
