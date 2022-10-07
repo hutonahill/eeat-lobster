@@ -1,35 +1,48 @@
 
 
-import javax.swing.SwingUtilities;
-import java.util.logging.Level;
+//import javax.swing.JFrame;
+
+import java.io.IOException;
+import java.util.logging.*;
+import java.util.logging.Logger;
 
 public class UITest {
 
+
     public static void main(String[] args) {
         
-        // Run this program o nhte Event Dispact Thread (EDT)
-        SwingUtilities.invokeLater(new Runnable() {
-            
-            @Override
-            public void run() {
+        //creates the logger and spesifies the name of the logger
+        Logger logger = Logger.getLogger("MyLog");  
+        FileHandler fh;  
+    
+        try {  
+    
+            // This block configure the logger with handler and formatter  
+            fh = new FileHandler("MyLogFile.log");  
+            logger.addHandler(fh);
+            SimpleFormatter formatter = new SimpleFormatter();  
+            fh.setFormatter(formatter);  
+    
+            // the following statement is used to log any messages  
+            logger.info("My first log");  
+    
+        } catch (SecurityException e) {  
+            e.printStackTrace();  
+        } catch (IOException e) {  
+            e.printStackTrace();  
+        }  
+    
+        logger.info("Hi How r u?");
 
-                try {
-                    Log myLog = new Log("log.txt");
-
-                    myLog.logger.setLevel(Level.WARNING);
-
-                    myLog.logger.info("test1");
-
-                    myFrame frame1 = new myFrame();
-                } catch(Exception e) {
-                    System.out.println("error: " + e);
-                }
-            }
-
-        });
+        //myFrame frame1 = new myFrame();
+  
 
         
         
     }
     
 }
+
+
+
+  

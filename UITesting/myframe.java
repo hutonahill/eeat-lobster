@@ -1,6 +1,6 @@
 
 
-import java.awt.FlowLayout;
+//import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -11,9 +11,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.event.*;
+//import java.awt.event.*;
+//import javax.swing.*;
+//import javax.swing.event.*;
 
 
 public class myFrame implements ActionListener{
