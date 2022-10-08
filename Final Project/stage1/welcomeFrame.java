@@ -2,6 +2,8 @@
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+
 //import java.io.File;
 import javax.swing.JButton;
 import javax.swing.*;
@@ -9,6 +11,8 @@ import javax.swing.*;
 //import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 import java.awt.*;
 
 public class welcomeFrame implements ActionListener{
@@ -50,6 +54,7 @@ public class welcomeFrame implements ActionListener{
         //construct components
         primaryOptionDrop = new JComboBox<> (primaryOptionDropItems);
         goButton = new JButton ("GO");
+        goButton.addActionListener(this);
         noLaborRadio = new JRadioButton ("No Labor");
         zeroSaleRadio = new JRadioButton ("No $0 Sale");
         negSaleRadio = new JRadioButton ("No Negitive Sale");
@@ -57,6 +62,7 @@ public class welcomeFrame implements ActionListener{
         label3 = new JLabel ("Filters");
         label2 = new JLabel ("Primary Options");
         loadButton = new JButton ("load .csv Report");
+        loadButton.addActionListener(this);;
         label1 = new JLabel ("File Location:");
         locationLabel = new JLabel ("filler");
 
@@ -90,6 +96,8 @@ public class welcomeFrame implements ActionListener{
         label1.setBounds (65, 215, 80, 25);
         locationLabel.setBounds (140, 215, 100, 25);
 
+
+
         this.frame1.setVisible(true);
     }
 
@@ -98,6 +106,29 @@ public class welcomeFrame implements ActionListener{
 
         if(e.getSource() == goButton){
             welcomeFrame.this.frame1.setVisible(false);
+        }
+        else if(e.getSource() == loadButton){
+            // hide the original frame when working in file chooser
+            welcomeFrame.this.frame1.setVisible(false); 
+
+            //create a new file chooser window
+            JFileChooser fileChooser = new JFileChooser(); 
+
+            //spesify that only pdfs can be selected
+            FileNameExtensionFilter filter = new FileNameExtensionFilter(
+                ".pdfs", "pdf"); 
+            fileChooser.setFileFilter(filter);
+
+            //get the butten pressed to close the file chooser
+            int responce = fileChooser.showOpenDialog(null); 
+
+            //if a file was selected same its location and print it to the command line.
+            if(responce == JFileChooser.APPROVE_OPTION){
+                File selectedFile = new File(fileChooser.getSelectedFile().getAbsolutePath());
+                System.out.println("file locaton: " + selectedFile);
+            }
+
+            welcomeFrame.this.frame1.setVisible(true); // show original frame.
         }
     }
 }
