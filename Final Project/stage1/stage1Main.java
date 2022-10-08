@@ -1,8 +1,9 @@
 
-import welcomeFrame;
+import welcomeFrame.java;
 
 public class stage1Main {
-    public static public static void main(String[] args) {
+    public static void main(String[] args) {
+        new welcomeFrame();
         welcomeFrame.initilize();
     }
 
