@@ -1,11 +1,17 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.JComboBox;
-import javax.swing.*;
-//import javax.swing.event.*;
 
-public class welcomeFrame extends JFrame implements ActionListener {
-    
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+//import java.io.File;
+import javax.swing.JButton;
+import javax.swing.*;
+//import javax.swing.JFileChooser;
+//import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.*;
+
+public class welcomeFrame implements ActionListener{
     private JComboBox<String> primaryOptionDrop;
     private JButton goButton;
     private JRadioButton noLaborRadio;
@@ -17,20 +23,32 @@ public class welcomeFrame extends JFrame implements ActionListener {
     private JButton loadButton;
     private JLabel label1;
     private JLabel locationLabel;
-    //private JFrame frame;
-    
+    private JFrame frame1;
 
+    public welcomeFrame() {
 
-    public void welcomeFramel() {
+        frame1 = new JFrame();
 
+        //add a tile to the jframe
+        this.frame1.setTitle("Title of Window"); 
+
+        //end the program when you hit the x.
+        this.frame1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
+
+        //adjust size and set layout
+        this.frame1.setLayout (null);
+
+        // set the size.
+        this.frame1.setSize(422, 400);  
+
+        // set location to the center of the screen.
+        this.frame1.setLocationRelativeTo(null);
 
         //construct preComponents
         String[] primaryOptionDropItems = {"Item 1", "Item 2", "Item 3"};
 
         //construct components
-        primaryOptionDrop = new JComboBox<>(primaryOptionDropItems);
-
-    
+        primaryOptionDrop = new JComboBox<> (primaryOptionDropItems);
         goButton = new JButton ("GO");
         noLaborRadio = new JRadioButton ("No Labor");
         zeroSaleRadio = new JRadioButton ("No $0 Sale");
@@ -43,30 +61,21 @@ public class welcomeFrame extends JFrame implements ActionListener {
         locationLabel = new JLabel ("filler");
 
         //adjust size and set layout
-        setPreferredSize (new Dimension (422, 319));
-        setLayout (null);
-        
-        //set title of the window
-        setTitle("Title of Window");
-
-        // set close function
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-
-        // set location to the center of the screen.
-        setLocationRelativeTo(null);
+        this.frame1.setPreferredSize (new Dimension (422, 319));
+        this.frame1.setLayout (null);
 
         //add components
-        add (primaryOptionDrop);
-        add (goButton);
-        add (noLaborRadio);
-        add (zeroSaleRadio);
-        add (negSaleRadio);
-        add (label4);
-        add (label3);
-        add (label2);
-        add (loadButton);
-        add (label1);
-        add (locationLabel);
+        this.frame1.add (primaryOptionDrop);
+        this.frame1.add (goButton);
+        this.frame1.add (noLaborRadio);
+        this.frame1.add (zeroSaleRadio);
+        this.frame1.add (negSaleRadio);
+        this.frame1.add (label4);
+        this.frame1.add (label3);
+        this.frame1.add (label2);
+        this.frame1.add (loadButton);
+        this.frame1.add (label1);
+        this.frame1.add (locationLabel);
 
         //set component bounds (only needed by Absolute Positioning)
         primaryOptionDrop.setBounds (65, 105, 100, 25);
@@ -81,12 +90,14 @@ public class welcomeFrame extends JFrame implements ActionListener {
         label1.setBounds (65, 215, 80, 25);
         locationLabel.setBounds (140, 215, 100, 25);
 
+        this.frame1.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
         if(e.getSource() == goButton){
+            welcomeFrame.this.frame1.setVisible(false);
         }
     }
 }
