@@ -127,6 +127,8 @@ public class welcomeFrame implements ActionListener{
             if(responce == JFileChooser.APPROVE_OPTION){
                 File selectedFile = new File(fileChooser.getSelectedFile().getAbsolutePath());
                 System.out.println("file locaton: " + selectedFile);
+                
+                // call stage 2 with selectedFile as a peramiter
             }
 
             welcomeFrame.this.frame1.setVisible(true); // show original frame.
