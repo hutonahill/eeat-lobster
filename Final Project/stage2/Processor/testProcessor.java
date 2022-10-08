@@ -13,8 +13,11 @@ public class testProcessor {
         String fileName = "C:\\Users\\Todd\\Documents\\GitHub\\eeat-lobster\\Final Project\\stage2\\Sales Sept 2022.csv";
         // File file = new File(fileName);
         String yas;
-        FileInputStream yo = new FileInputStream(fileName);
-        int a = yo.read();
+        try (FileInputStream yo = new FileInputStream(fileName)) {
+            int a = yo.read();
+
+        }
+        ;
 
     }
 }
