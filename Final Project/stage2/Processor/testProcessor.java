@@ -1,18 +1,20 @@
 // package FinalProject.stage2.Processor;
+// package com.mkyong.io.utils.ResourceHelper;
+// import com.mkyong.io.utils.ResourceHelper;
 
 import java.io.*;
-import java.util.Scanner;
+import java.nio.*;
+import java.util.stream.Stream;
+
+// import java.util.Scanner;
 
 public class testProcessor {
-    public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(new File("/Users/jones/Desktop/Hack-A-Thon/Slead Shead data 2/salesTestFile.csv"));
-        // parsing a CSV file into the constructor of Scanner class
-        sc.useDelimiter(",");
-        // setting comma as delimiter pattern
-        while (sc.hasNext()) {
-            System.out.print(sc.next());
-        }
-        sc.close();
-        // closes the scanner
+    public static void main(String[] args) {
+        String fileName = "C:\\Users\\Todd\\Documents\\GitHub\\eeat-lobster\\Final Project\\stage2\\Sales Sept 2022.csv";
+        // File file = new File(fileName);
+        String yas;
+        FileInputStream yo = new FileInputStream(fileName);
+        int a = yo.read();
+
     }
 }
