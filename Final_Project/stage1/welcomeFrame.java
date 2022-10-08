@@ -7,12 +7,9 @@ import java.io.IOException;
 import java.util.Enumeration;
 
 //import java.io.File;
-import javax.swing.JButton;
-import javax.swing.*;
 //import javax.swing.JFileChooser;
 //import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import java.awt.*;
@@ -20,9 +17,10 @@ import java.awt.*;
 public class welcomeFrame implements ActionListener {
     private JComboBox<String> primaryOptionDrop;
     private JButton goButton;
-    private JRadioButton noLaborRadio;
-    private JRadioButton zeroSaleRadio;
-    private JRadioButton negSaleRadio;
+    private JCheckBox noLaborRadio;
+    private JCheckBox zeroSaleRadio;
+    private JCheckBox negSaleRadio;
+    private JCheckBox descending;
     private JLabel label4;
     private JLabel label3;
     private JLabel label2;
@@ -53,9 +51,8 @@ public class welcomeFrame implements ActionListener {
 
         // construct preComponents
         String[] primaryOptionDropItems = { "Select Item...",
-                "Most Discounted", "Least Discounted", "Highest Average Discount",
-                "Lowest Average Discount", "Most Units Sold", "Least Units Sold",
-                "Most Profitable", "Least Profitable", "Best Margin", "Worst Margin" };
+                "Discount", "Units", "Gross Sale Price", "Profit", "Margin (Sale)"
+        };
 
         filters = new ButtonGroup();
 
@@ -65,14 +62,21 @@ public class welcomeFrame implements ActionListener {
         goButton = new JButton("GO");
         goButton.addActionListener(this);
 
-        noLaborRadio = new JRadioButton("No Labor");
+        noLaborRadio = new JCheckBox("No Labor", true);
         filters.add(noLaborRadio);
+        noLaborRadio.addActionListener(this);
 
-        zeroSaleRadio = new JRadioButton("No $0 Sale");
+        zeroSaleRadio = new JCheckBox("No $0 Sale");
         filters.add(zeroSaleRadio);
+        zeroSaleRadio.addActionListener(this);
 
-        negSaleRadio = new JRadioButton("No Negitive Sale");
+        negSaleRadio = new JCheckBox("No Negitive Sale");
         filters.add(negSaleRadio);
+        negSaleRadio.addActionListener(this);
+
+        descending = new JCheckBox("Descending");
+        filters.add(descending);
+        descending.addActionListener(this);
 
         label4 = new JLabel("Welcome to Frankenstein's Lobster");
         label3 = new JLabel("Filters");
@@ -96,6 +100,7 @@ public class welcomeFrame implements ActionListener {
         this.frame1.add(noLaborRadio);
         this.frame1.add(zeroSaleRadio);
         this.frame1.add(negSaleRadio);
+        this.frame1.add(descending);
         this.frame1.add(label4);
         this.frame1.add(label3);
         this.frame1.add(label2);
@@ -109,6 +114,7 @@ public class welcomeFrame implements ActionListener {
         noLaborRadio.setBounds(245, 80, 100, 30);
         zeroSaleRadio.setBounds(245, 105, 110, 25);
         negSaleRadio.setBounds(245, 130, 125, 25);
+        descending.setBounds(245, 155, 100, 25);
         label4.setBounds(100, 10, 300, 30);
         label3.setBounds(260, 50, 70, 25);
         label2.setBounds(65, 75, 100, 25);

@@ -57,7 +57,7 @@ public class solution {
     private String[] fliterStringConversion(String userInput) {
         String[] prs = userInput.split(userInput);
         if (prs[0] == "No Labor") {
-
+            prs[0] = "1";
         }
         return prs;
     }
