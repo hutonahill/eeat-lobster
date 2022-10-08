@@ -1,6 +1,7 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "jython-standalone-2.7.3.jar"
+        "jython-standalone-2.7.3.jar",
+        "pandas.jar"
     ]
 }
