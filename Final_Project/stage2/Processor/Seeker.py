@@ -4,10 +4,11 @@ class Seeker:
     def __init__(self) -> None:
         pass
 
-    def Seek(self, filepath, sortBy):
+    def Seek(self, filepath, sortBy, filter1):
         file = pd.read_csv(filepath)
 
         if sortBy in file.columns():
+
             pass
 
         filterList = "011profit"
@@ -18,8 +19,8 @@ class Seeker:
             file.filter(regex="")
         if filterList[1]:
             file.filter(regex="")
-        if filterList[2]:
-            file.filter(regex="")
+        if filter1:
+            file.filter(like="$0.00")
 
         file.filter(regex = sortBy)
         file.sort_values()
