@@ -74,7 +74,7 @@ public class welcomeFrame implements ActionListener {
         negSaleRadio = new JRadioButton("No Negitive Sale");
         filters.add(negSaleRadio);
 
-        label4 = new JLabel("Welcome to EEAT");
+        label4 = new JLabel("Welcome to Frankenstein's Lobster");
         label3 = new JLabel("Filters");
         label2 = new JLabel("Primary Options");
 
@@ -87,7 +87,7 @@ public class welcomeFrame implements ActionListener {
         locationLabel.setVerticalAlignment(SwingConstants.TOP);
 
         // adjust size and set layout
-        this.frame1.setPreferredSize(new Dimension(422, 319));
+        this.frame1.setPreferredSize(new Dimension(500, 319));
         this.frame1.setLayout(null);
 
         // add components
@@ -104,12 +104,12 @@ public class welcomeFrame implements ActionListener {
         this.frame1.add(locationLabel);
 
         // set component bounds (only needed by Absolute Positioning)
-        primaryOptionDrop.setBounds(65, 105, 100, 25);
+        primaryOptionDrop.setBounds(65, 105, 170, 25);
         goButton.setBounds(160, 275, 60, 25);
         noLaborRadio.setBounds(245, 80, 100, 30);
         zeroSaleRadio.setBounds(245, 105, 110, 25);
         negSaleRadio.setBounds(245, 130, 125, 25);
-        label4.setBounds(130, 10, 150, 30);
+        label4.setBounds(100, 10, 300, 30);
         label3.setBounds(260, 50, 70, 25);
         label2.setBounds(65, 75, 100, 25);
         loadButton.setBounds(125, 180, 130, 25);
@@ -171,6 +171,8 @@ public class welcomeFrame implements ActionListener {
 
                 solution process = new solution();
                 process.setfileLocation(selectedFile.getAbsolutePath());
+                process.setUserInput(settings);
+                System.out.println(settings);
                 process.run();
 
                 System.exit(0);
