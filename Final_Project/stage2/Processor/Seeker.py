@@ -4,7 +4,7 @@ class Seeker:
     def __init__(self) -> None:
         pass
 
-    def Seek(filepath, sortBy, filterList):
+    def Seek(self, filepath, sortBy, filterList):
         file = pd.read_csv(filepath)
 
         filterList = "001Profit"
