@@ -38,7 +38,7 @@ public class welcomeFrame implements ActionListener{
         frame1 = new JFrame();
 
         //add a tile to the jframe
-        this.frame1.setTitle("Title of Window"); 
+        this.frame1.setTitle("CSV Report Compiler"); 
 
         //end the program when you hit the x.
         this.frame1.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
@@ -53,7 +53,10 @@ public class welcomeFrame implements ActionListener{
         this.frame1.setLocationRelativeTo(null);
 
         //construct preComponents
-        String[] primaryOptionDropItems = {"Item 1", "Item 2", "Item 3"};
+        String[] primaryOptionDropItems = {"Select Item...", 
+        "Most Discounted", "Least Discounted", "Highest Average Discount", 
+        "Lowest Average Discount", "Most Units Sold", "Least Units Sold", 
+        "Most Profitable", "Least Profitable", "Best Margin", "Worst Margin" };
 
         filters = new ButtonGroup();
 
