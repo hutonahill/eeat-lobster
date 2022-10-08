@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 // import java.util.Scanner;
 
 public class testProcessor {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String fileName = "C:\\Users\\Todd\\Documents\\GitHub\\eeat-lobster\\Final Project\\stage2\\Sales Sept 2022.csv";
         // File file = new File(fileName);
         String yas;
