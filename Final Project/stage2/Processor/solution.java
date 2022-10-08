@@ -4,10 +4,27 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 public class solution {
+    // Variables
+    private String fileLocation;
 
+    // Constructors
     public solution() {
     }
 
+    public solution(String fileLocation) {
+        setfileLocation(fileLocation);
+    }
+
+    // Getters and Setters
+    public String getfileLocation() {
+        return this.fileLocation;
+    }
+
+    public void setfileLocation(String fileLocation) {
+        this.fileLocation = fileLocation;
+    }
+
+    // Methods
     public void run() {
 
         runPython(".\test1.py");
