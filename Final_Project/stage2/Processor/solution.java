@@ -28,13 +28,12 @@ public class solution {
 
     }
 
-    public static Process mProcess;
-
     public static void runPython(String fileLocation) {
         System.out.println("I am in runPython");
 
         // try (PythonInterpreter pyInterp = new PythonInterpreter()) {
-        //     pyInterp.exec("from test1 import PythonClass\npc = PythonClass()\npc.nameOfFunction()");
+        // pyInterp.exec("from test1 import PythonClass\npc =
+        // PythonClass()\npc.nameOfFunction()");
         // }
 
         try (PythonInterpreter pyInterp = new PythonInterpreter()) {

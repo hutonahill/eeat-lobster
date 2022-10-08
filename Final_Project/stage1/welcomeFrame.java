@@ -126,7 +126,7 @@ public class welcomeFrame implements ActionListener {
     public static void outputSettings(String settings) {
         try {
             FileWriter outputFile = new FileWriter("stage1\\stage1Output.txt");
-
+            System.out.println();
             outputFile.write(settings);
 
             outputFile.close();
@@ -169,9 +169,9 @@ public class welcomeFrame implements ActionListener {
 
                 outputSettings(settings);
 
-                solution bacon = new solution();
-
-                bacon.run();
+                solution process = new solution();
+                process.setfileLocation(selectedFile.getAbsolutePath());
+                process.run();
 
                 System.exit(0);
             }
