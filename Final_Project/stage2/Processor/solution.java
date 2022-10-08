@@ -2,6 +2,7 @@
 // package FinalProject.stage2.Processor;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import org.python.util.PythonInterpreter;
 
 public class solution {
     // Variables
@@ -35,6 +36,11 @@ public class solution {
 
     public static void runPython(String fileLocation) {
         System.out.println("I am in runPython");
+
+        try (PythonInterpreter pyInterp = new PythonInterpreter()) {
+            pyInterp.exec("from test1 import PythonClass\npc = PythonClass()\npc.nameOfFunction()");
+        }
+
         String pythonFile = fileLocation;
         Process process;
         try {

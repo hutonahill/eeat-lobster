@@ -1,16 +1,14 @@
+import java.util.List;
+
 public class filter {
-    int num;
+    private String fileName;
 
-    filter() {
-        this.num = 0;
-    };
-
-    filter(String fileName) {
-        this.num = 1;
+    filter(String fileName, List checkedList) {
+        this.fileName = fileName;
     }
 
     public void filterRequests() {
-        switch (num) {
+        switch (1) {
             case 0:
             case 1:
             case 2:
