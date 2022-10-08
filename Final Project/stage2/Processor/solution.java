@@ -11,8 +11,8 @@ public class solution {
 
     }
 
-    public Process mProcess;
-    public void runPython(String fileLocation) {
+    public static Process mProcess;
+    public static void runPython(String fileLocation) {
         Process process;
         try {
             process = Runtime.getRuntime().exec("python " + fileLocation);
