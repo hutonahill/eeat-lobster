@@ -45,6 +45,5 @@ public class solution {
             pyInterp.exec("from dataParser import Parser\ndp = Parser()\ndp.Parse()");
         }
 
-        
     }
 }
