@@ -1,5 +1,5 @@
 
-//import javax.swing.JFrame;
+import javax.swing.JFrame;
 
 import java.io.IOException;
 import java.util.logging.*;
@@ -32,7 +32,7 @@ public class UITest {
 
         logger.info("Hi How r u?");
 
-        // myFrame frame1 = new myFrame();
+        myFrame frame1 = new myFrame();
 
     }
 
