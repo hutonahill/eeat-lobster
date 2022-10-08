@@ -1,7 +1,3 @@
-
-// package FinalProject.stage2.Processor;
-import java.io.*;
-import java.nio.charset.StandardCharsets;
 import org.python.util.PythonInterpreter;
 
 public class solution {
@@ -28,7 +24,7 @@ public class solution {
     // Methods
     public void run() {
         System.out.println("This works");
-        runPython("Final_Project\\stage2\\Processor\\test1.py");
+        runPython(fileLocation);
 
     }
 
