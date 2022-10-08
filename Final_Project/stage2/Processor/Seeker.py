@@ -4,8 +4,25 @@ class Seeker:
     def __init__(self) -> None:
         pass
 
-    def Seek(filepath):
+    def Seek(self, filepath, sortBy):
         file = pd.read_csv(filepath)
+
+        if sortBy in file.columns():
+            pass
+
+        filterList = "011profit"
+
+        
+
+        if filterList[0]:
+            file.filter(regex="")
+        if filterList[1]:
+            file.filter(regex="")
+        if filterList[2]:
+            file.filter(regex="")
+
+        file.filter(regex = sortBy)
+        file.sort_values()
 
         # if filterList[0]:
         #     pass
