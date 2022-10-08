@@ -106,6 +106,7 @@ public class welcomeFrame implements ActionListener{
 
         if(e.getSource() == goButton){
             welcomeFrame.this.frame1.setVisible(false);
+            System.exit(0);
         }
         else if(e.getSource() == loadButton){
             // hide the original frame when working in file chooser
@@ -116,7 +117,7 @@ public class welcomeFrame implements ActionListener{
 
             //spesify that only pdfs can be selected
             FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                ".pdfs", "pdf"); 
+                ".csv reports only", "csv"); 
             fileChooser.setFileFilter(filter);
 
             //get the butten pressed to close the file chooser
