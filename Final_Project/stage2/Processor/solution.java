@@ -38,7 +38,7 @@ public class solution {
         // }
 
         try (PythonInterpreter pyInterp = new PythonInterpreter()) {
-            pyInterp.exec("from Seeker import Seeker\ndp = Seeker()\ndp.Seek()");
+            pyInterp.exec("from Seeker import Seeker\ndp = Seeker()\ndp.Seek("+ fileLocation +")");
         }
 
     }
