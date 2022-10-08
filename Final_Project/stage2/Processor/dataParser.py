@@ -1,5 +1,13 @@
 import pandas as pd
 
+class Parser:
+    def __init__(self) -> None:
+        pass
+
+    def Parse(filepath):
+        pass
+
+
 file = pd.read_csv(
     '/Users/jones/Desktop/Hack-A-Thon/Slead Shead data 2/salesTestFile.csv')
 
