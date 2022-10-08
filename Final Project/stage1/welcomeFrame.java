@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class welcomeFrame extends JFrame implements ActionListener {
     
-    private JComboBox primaryOptionDrop;
+    private JComboBox<String> primaryOptionDrop;
     private JButton goButton;
     private JRadioButton noLaborRadio;
     private JRadioButton zeroSaleRadio;
@@ -17,29 +17,20 @@ public class welcomeFrame extends JFrame implements ActionListener {
     private JButton loadButton;
     private JLabel label1;
     private JLabel locationLabel;
-    private JFrame frame;
+    //private JFrame frame;
     
 
 
-    public MyPanel() {
+    public void welcomeFramel() {
 
-        //construct components
-        primaryOptionDrop = new JComboBox(primaryOptionDropItems);
-
-        //set title of the window
-        //this.frame.setTitle("Title of Window");
-
-        // set close function
-        //this.frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
-
-        // set location to the center of the screen.
-        //setLocationRelativeTo(null);
 
         //construct preComponents
         String[] primaryOptionDropItems = {"Item 1", "Item 2", "Item 3"};
 
-        
+        //construct components
+        primaryOptionDrop = new JComboBox<>(primaryOptionDropItems);
 
+    
         goButton = new JButton ("GO");
         noLaborRadio = new JRadioButton ("No Labor");
         zeroSaleRadio = new JRadioButton ("No $0 Sale");
@@ -52,21 +43,30 @@ public class welcomeFrame extends JFrame implements ActionListener {
         locationLabel = new JLabel ("filler");
 
         //adjust size and set layout
-        this.frame.setPreferredSize (new Dimension (422, 319));
-        this.frame.setLayout (null);
+        setPreferredSize (new Dimension (422, 319));
+        setLayout (null);
+        
+        //set title of the window
+        setTitle("Title of Window");
+
+        // set close function
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+
+        // set location to the center of the screen.
+        setLocationRelativeTo(null);
 
         //add components
-        this.frame.add (primaryOptionDrop);
-        this.frame.add (goButton);
-        this.frame.add (noLaborRadio);
-        this.frame.add (zeroSaleRadio);
-        this.frame.add (negSaleRadio);
-        this.frame.add (label4);
-        this.frame.add (label3);
-        this.frame.add (label2);
-        this.frame.add (loadButton);
-        this.frame.add (label1);
-        this.frame.add (locationLabel);
+        add (primaryOptionDrop);
+        add (goButton);
+        add (noLaborRadio);
+        add (zeroSaleRadio);
+        add (negSaleRadio);
+        add (label4);
+        add (label3);
+        add (label2);
+        add (loadButton);
+        add (label1);
+        add (locationLabel);
 
         //set component bounds (only needed by Absolute Positioning)
         primaryOptionDrop.setBounds (65, 105, 100, 25);
@@ -81,7 +81,6 @@ public class welcomeFrame extends JFrame implements ActionListener {
         label1.setBounds (65, 215, 80, 25);
         locationLabel.setBounds (140, 215, 100, 25);
 
-        this.frame.setVisible(true);
     }
 
     @Override
