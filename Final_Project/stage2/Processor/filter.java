@@ -3,7 +3,7 @@ import java.util.List;
 public class filter {
     private String fileName;
 
-    filter(String fileName, List checkedList) {
+    filter(String fileName, List<Boolean> checkedList) {
         this.fileName = fileName;
     }
 

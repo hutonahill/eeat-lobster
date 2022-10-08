@@ -41,6 +41,5 @@ public class solution {
             pyInterp.exec("from Seeker import Seeker\ndp = Seeker()\ndp.Seek()");
         }
 
-        
     }
 }
