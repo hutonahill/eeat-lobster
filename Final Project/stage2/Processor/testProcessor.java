@@ -10,11 +10,12 @@ import java.util.stream.Stream;
 
 public class testProcessor {
     public static void main(String[] args) throws IOException {
-        String fileName = "C:\\Users\\Todd\\Documents\\GitHub\\eeat-lobster\\Final Project\\stage2\\Sales Sept 2022.csv";
+        String fileName = "..\\Sales Sept 2022.csv";
         // File file = new File(fileName);
         String yas;
         try (FileInputStream yo = new FileInputStream(fileName)) {
             int a = yo.read();
+            System.out.println(a);
         }
     }
 }
