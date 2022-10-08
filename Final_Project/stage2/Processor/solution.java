@@ -37,12 +37,12 @@ public class solution {
     public static void runPython(String fileLocation) {
         System.out.println("I am in runPython");
 
-        try (PythonInterpreter pyInterp = new PythonInterpreter()) {
-            pyInterp.exec("from test1 import PythonClass\npc = PythonClass()\npc.nameOfFunction()");
-        }
+        // try (PythonInterpreter pyInterp = new PythonInterpreter()) {
+        //     pyInterp.exec("from test1 import PythonClass\npc = PythonClass()\npc.nameOfFunction()");
+        // }
 
         try (PythonInterpreter pyInterp = new PythonInterpreter()) {
-            pyInterp.exec("from dataParser import Parser\ndp = Parser()\ndp.Parse()");
+            pyInterp.exec("from Seeker import Seeker\ndp = Seeker()\ndp.Seek()");
         }
 
     }
