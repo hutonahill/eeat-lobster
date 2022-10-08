@@ -5,7 +5,7 @@ import org.python.util.PythonInterpreter;
 public class solution {
     // Variables
     private String fileLocation;
-    private String[] userInput;
+    private String userInput;
 
     // Constructors
     public solution() {
@@ -24,13 +24,12 @@ public class solution {
         this.fileLocation = fileLocation;
     }
 
-    public String[] getUserInput() {
+    public String getUserInput() {
         return this.userInput;
     }
 
     public void setUserInput(String userInput) {
-        String[] newString = fliterStringConversion(userInput);
-        this.userInput = newString;
+        this.userInput = userInput;
     }
 
     // Methods
@@ -54,11 +53,11 @@ public class solution {
 
     }
 
-    private String[] fliterStringConversion(String userInput) {
-        String[] prs = userInput.split(userInput);
-        if (prs[0] == "No Labor") {
-            prs[0] = "1";
-        }
-        return prs;
-    }
+    // private String[] fliterStringConversion(String userInput) {
+    // String[] prs = userInput.split(userInput);
+    // if (prs[0] == "No Labor") {
+    // prs[0] = "1";
+    // }
+    // return prs;
+    // }
 }
