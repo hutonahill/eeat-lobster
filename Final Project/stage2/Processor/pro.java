@@ -23,15 +23,15 @@ import java.nio.charset.StandardCharsets;
 public class pro {
     public Process mProcess;
 
-    public pro() {
+    public pro(String fileLocation) {
         Process process;
         try {
-            process = Runtime.getRuntime().exec(new String[] { "test1", "arg1", "arg2" });
+            process = Runtime.getRuntime().exec("python " + fileLocation);
             mProcess = process;
         } catch (Exception e) {
             System.out.println("Exception Raised" + e.toString());
         }
-        InputStream stdout = mProcess.getInputStream();
+        InputStream stdout = (mProcess != null) ? mProcess.getInputStream(): null;
         BufferedReader reader = new BufferedReader(new InputStreamReader(stdout, StandardCharsets.UTF_8));
         String line;
         try {
