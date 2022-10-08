@@ -1,11 +1,9 @@
 
 
-//import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import javax.swing.JButton;
-//import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.JFrame;
@@ -14,6 +12,8 @@ import java.awt.*;
 //import java.awt.event.*;
 //import javax.swing.*;
 //import javax.swing.event.*;
+//import javax.swing.JDialog;
+//import java.awt.FlowLayout;
 
 
 public class myFrame implements ActionListener{
@@ -38,9 +38,9 @@ public class myFrame implements ActionListener{
         //end the program when you hit the x.
         this.topFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
 
-         //adjust size and set layout
-         this.topFrame.setPreferredSize (new Dimension (407, 325));
-         this.topFrame.setLayout (null);
+        //adjust size and set layout
+        this.topFrame.setPreferredSize (new Dimension (407, 325));
+        this.topFrame.setLayout (null);
 
         // set the size.
         this.topFrame.setSize(500, 500);  
