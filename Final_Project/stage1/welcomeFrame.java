@@ -159,7 +159,7 @@ public class welcomeFrame implements ActionListener {
                 infoBox("You must Select a file. Please try agean",
                         "Impropper Input");
                 welcomeFrame.this.frame1.setVisible(true);
-            } else if (selectedFile != null) {
+            } else /* if (selectedFile != null) */ {
 
                 String settings;
 

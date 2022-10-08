@@ -26,18 +26,21 @@ public class solution {
 
     // Methods
     public void run() {
-
-        runPython(".\test1.py");
+        System.out.println("This works");
+        runPython("Final_Project\\stage2\\Processor\\test1.py");
 
     }
 
     public static Process mProcess;
 
     public static void runPython(String fileLocation) {
+        System.out.println("I am in runPython");
+        String pythonFile = fileLocation;
         Process process;
         try {
-            process = Runtime.getRuntime().exec("python " + fileLocation);
+            process = Runtime.getRuntime().exec(pythonFile);
             mProcess = process;
+            System.out.println(mProcess);
         } catch (Exception e) {
             System.out.println("Exception Raised" + e.toString());
         }
@@ -47,6 +50,7 @@ public class solution {
         try {
             while ((line = reader.readLine()) != null) {
                 System.out.println("stdout: " + line);
+                System.out.println("Test Line");
             }
         } catch (IOException e) {
             System.out.println("Exception in reading output" + e.toString());

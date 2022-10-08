@@ -1,5 +1,4 @@
 
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -15,53 +14,50 @@ import java.awt.*;
 //import javax.swing.JDialog;
 //import java.awt.FlowLayout;
 
-
-public class myFrame implements ActionListener{
+public class myFrame implements ActionListener {
 
     // create action eliments of the JFrame as class variables
-    //      to allow action listener to see them.
+    // to allow action listener to see them.
     private JLabel welcomeLabel;
     private JButton button;
     private JFrame topFrame;
 
-    myFrame(){
+    myFrame() {
         initilize();
     }
 
     public void initilize() {
-        //create new JFrame object
-        topFrame = new JFrame(); 
+        // create new JFrame object
+        topFrame = new JFrame();
 
-        //add a tile to the jframe
-        this.topFrame.setTitle("Title of Window"); 
+        // add a tile to the jframe
+        this.topFrame.setTitle("Title of Window");
 
-        //end the program when you hit the x.
-        this.topFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
+        // end the program when you hit the x.
+        this.topFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-        //adjust size and set layout
-        this.topFrame.setPreferredSize (new Dimension (407, 325));
-        this.topFrame.setLayout (null);
+        // adjust size and set layout
+        this.topFrame.setPreferredSize(new Dimension(407, 325));
+        this.topFrame.setLayout(null);
 
         // set the size.
-        this.topFrame.setSize(500, 500);  
+        this.topFrame.setSize(500, 500);
 
         // set location to the center of the screen.
         this.topFrame.setLocationRelativeTo(null);
 
-        //construct components
-        welcomeLabel = new JLabel ("Welcome to PDF selector");
-        button = new JButton ("Go");
+        // construct components
+        welcomeLabel = new JLabel("Welcome to PDF selector");
+        button = new JButton("Go");
 
+        // set component bounds (only needed by Absolute Positioning)
+        welcomeLabel.setBounds(125, 70, 150, 25);
+        button.setBounds(175, 200, 65, 25);
 
-        //set component bounds (only needed by Absolute Positioning)
-        welcomeLabel.setBounds (125, 70, 150, 25);
-        button.setBounds (175, 200, 65, 25);
-        
         // object to JFrame
         this.topFrame.add(welcomeLabel);
         this.topFrame.add(button);
         button.addActionListener(this);
-        
 
         // make the main frame visible.
         this.topFrame.setVisible(true);
@@ -70,30 +66,30 @@ public class myFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if(e.getSource() == button){
+        if (e.getSource() == button) {
 
             // hide the original frame when working in file chooser
-            myFrame.this.topFrame.setVisible(false); 
+            myFrame.this.topFrame.setVisible(false);
 
-            //create a new file chooser window
-            JFileChooser fileChooser = new JFileChooser(); 
+            // create a new file chooser window
+            JFileChooser fileChooser = new JFileChooser();
 
-            //spesify that only pdfs can be selected
+            // spesify that only pdfs can be selected
             FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                ".pdfs", "pdf"); 
+                    ".pdfs", "pdf");
             fileChooser.setFileFilter(filter);
 
-            //get the butten pressed to close the file chooser
-            int responce = fileChooser.showOpenDialog(null); 
+            // get the butten pressed to close the file chooser
+            int responce = fileChooser.showOpenDialog(null);
 
-            //if a file was selected same its location and print it to the command line.
-            if(responce == JFileChooser.APPROVE_OPTION){
+            // if a file was selected same its location and print it to the command line.
+            if (responce == JFileChooser.APPROVE_OPTION) {
                 File selectedFile = new File(fileChooser.getSelectedFile().getAbsolutePath());
                 System.out.println("file locaton: " + selectedFile);
             }
 
             myFrame.this.topFrame.setVisible(true); // show original frame.
         }
-        
+
     }
 }
