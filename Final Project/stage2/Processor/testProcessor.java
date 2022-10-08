@@ -15,9 +15,6 @@ public class testProcessor {
         String yas;
         try (FileInputStream yo = new FileInputStream(fileName)) {
             int a = yo.read();
-
         }
-        ;
-
     }
 }
