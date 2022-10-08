@@ -7,7 +7,7 @@ import javax.swing.*;
 import javax.swing.event.*;
 
 public class MyPanel extends JPanel {
-    private JComboBox primaryOptionDrop;
+    private JComboBox<String> primaryOptionDrop;
     private JButton goButton;
     private JRadioButton noLaborRadio;
     private JRadioButton zeroSaleRadio;
@@ -24,7 +24,7 @@ public class MyPanel extends JPanel {
         String[] primaryOptionDropItems = {"Item 1", "Item 2", "Item 3"};
 
         //construct components
-        primaryOptionDrop = new JComboBox (primaryOptionDropItems);
+        primaryOptionDrop = new JComboBox<> (primaryOptionDropItems);
         goButton = new JButton ("GO");
         noLaborRadio = new JRadioButton ("No Labor");
         zeroSaleRadio = new JRadioButton ("No $0 Sale");
