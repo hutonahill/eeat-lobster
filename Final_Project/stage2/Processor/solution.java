@@ -1,8 +1,10 @@
 import org.python.util.PythonInterpreter;
+import java.util.List;
 
 public class solution {
     // Variables
     private String fileLocation;
+    private List<Boolean> userInput;
 
     // Constructors
     public solution() {
@@ -19,6 +21,14 @@ public class solution {
 
     public void setfileLocation(String fileLocation) {
         this.fileLocation = fileLocation;
+    }
+
+    public List<Boolean> getUserInput() {
+        return this.userInput;
+    }
+
+    public void setUserInput(List<Boolean> userInput) {
+        this.userInput = userInput;
     }
 
     // Methods
