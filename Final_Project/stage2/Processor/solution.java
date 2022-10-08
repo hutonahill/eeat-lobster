@@ -41,25 +41,10 @@ public class solution {
             pyInterp.exec("from test1 import PythonClass\npc = PythonClass()\npc.nameOfFunction()");
         }
 
-        String pythonFile = fileLocation;
-        Process process;
-        try {
-            process = Runtime.getRuntime().exec(pythonFile);
-            mProcess = process;
-            System.out.println(mProcess);
-        } catch (Exception e) {
-            System.out.println("Exception Raised" + e.toString());
+        try (PythonInterpreter pyInterp = new PythonInterpreter()) {
+            pyInterp.exec("from dataParser import Parser\ndp = Parser()\ndp.Parse()");
         }
-        InputStream stdout = (mProcess != null) ? mProcess.getInputStream() : null;
-        BufferedReader reader = new BufferedReader(new InputStreamReader(stdout, StandardCharsets.UTF_8));
-        String line;
-        try {
-            while ((line = reader.readLine()) != null) {
-                System.out.println("stdout: " + line);
-                System.out.println("Test Line");
-            }
-        } catch (IOException e) {
-            System.out.println("Exception in reading output" + e.toString());
-        }
+
+        
     }
 }
